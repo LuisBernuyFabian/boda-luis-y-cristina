@@ -1,7 +1,7 @@
 {
   "name": "boda-luis-y-cristina",
   "version": "0.1.0",
-  "homepage": "https://github.com/LuisBernuyFabian/boda-luis-y-cristina",
+  "homepage": "https://luisbernuyfabian.github.io/boda-luis-y-cristina/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +13,7 @@
     "format": "prettier --write \"./src/**/*.{ts,json,html}\"",
     "lint-format": "npm run format &&  ng lint --fix",
     "format-pretty-quick": "pretty-quick --pattern \"src/**/*.*(ts|json|html|scss)\" --staged",
-    "deploy": "npm run build && gh-pages -d dist/boda-luis-y-cristina/browser"
+    "deploy": "npm run build && gh-pages -d dist/boda-luis-y-cristina/"
   },
   "private": true,
   "dependencies": {
