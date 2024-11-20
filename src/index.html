@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeddingInvitation</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+<!-- Listado de css con version dinamica segun modificacion de archivo -->
+<link rel="stylesheet" href="css/bootstrap.min.css?v=1680789280"/>
+<!-- <link rel="stylesheet" href="css/slick.css?v=1680789281"/>
+<link rel="stylesheet" href="css/slick-theme.css?v=1680789280"/>
+<link rel="stylesheet" href="css/jquery.fancybox.min.css?v=1680789279"/> -->
+<link rel="stylesheet" href="css/addEvent.css?v=1680789278"/>
+<link rel="stylesheet" href="css/aos.css?v=1680789278"/>
+<link rel="stylesheet" href="css/style-one-theme.css"/>
+<link rel="stylesheet" href="css/responsive.css?v=1680789280"/>
+<!-- Color para navegadores moviles -->
+<meta name="theme-color" content="#767b35">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cookie&amp;family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+
+
+<!-- Animacion loader -->
+<!-- <script>
+  let svgContainerLoader = document.querySelector('.loader');
+
+  let animLoader = bodymovin.loadAnimation({
+    wrapper: svgContainerLoader,
+    animType: 'svg',
+    loop: true,
+    path: _pathProducto + "img/loader.json"
+  });
+</script> -->
+
+
+
+<!-- Soporte WEBP -->
+<script>
+  function support_format_webp() {
+    var elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+      // was able or not to get WebP representation
+      return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    } else {
+      // very old browser like IE 8, canvas not supported
+      return false;
+    }
+  }
+</script>
+  <!-- Lottie -->
+  <script src="js/lottie_svg.min.js"></script>
+  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script> -->
+
+
+<!-- Listado de js con version dinamica segun modificacion de archivo -->
+<!-- <script type='text/javascript' src='langs/js/es-PE.js?v=1680791551'> -->
+
+<script type='text/javascript' src='js/jquery-3.5.1.min.js?v=1680789309'></script>
+<script type='text/javascript' src='https://www.fixdate.io/public/js/jquery.cookie.js?v=1645580925'></script>
+<script type='text/javascript' src='https://www.fixdate.io/public/js/change-lang.js?v=1645580924'></script>
+<script type='text/javascript' src='js/waypoint/noframework.waypoints.min.js?v=1680791542'></script>
+<script type='text/javascript' src='js/parallax.min.js?v=1680789310'></script>
+<script type='text/javascript' src='js/popper.min.js?v=1680789310'></script>
+<script type='text/javascript' src='js/bootstrap.min.js?v=1680789308'></script>
+<!-- <script type='text/javascript' src='js/slick.min.js?v=1680789311'> -->
+</script><script type='text/javascript' src='js/jquery.fancybox.min.js?v=1680789309'></script>
+<script type='text/javascript' src='js/aos.js?v=1680789308'></script>
+<!-- <script type='text/javascript' src='js/scripts.js?v=1680789310'></script> -->
+
+
+
+  <script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  
+      var device = 'mobile';
+    } else {
+      var device = 'desktop';
+    }
+  </script>
+  
+  <!-- AddEvent script -->
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+  <!-- AddEvent Settings -->
+  <!-- <script type="text/javascript">
+    window.addeventasync = function () {
+      addeventatc.settings({
+        css: false,
+
+        appleical: {
+          show: true,
+          text: 'Apple Calendar'
+        },
+        google: {
+          show: true,
+          text: 'Google <em>(online)</em>'
+        },
+        office365: {
+          show: true,
+          text: 'Office 365 <em>(online)</em>'
+        },
+        outlook: {
+          show: true,
+          text: 'Outlook'
+        },
+        outlookcom: {
+          show: true,
+          text: 'Outlook.com <em>(online)</em>'
+        },
+        yahoo: {
+          show: true,
+          text: 'Yahoo <em>(online)</em>'
+        },
+        facebook: {
+          show: true,
+          text: 'Facebook'
+        }
+      });
+    };
+  </script> -->
+
+  <!-- Idiomas segun config de invitacion -->
+
+  <!-- Portada parallax -->
+  <script>
+    if (device == 'mobile' || $(window).width() < 768) {
+      // Aceptar webp?
+      if (support_format_webp()) {
+        var imageParallax = 'img/fondo-mobile.webp';
+      } else {
+        var imageParallax = 'https://www.fixdate.io/pe/modelo-invitacion/img/fondo-mobile.jpg';
+      }
+    } else {
+      // Aceptar webp?
+      if (support_format_webp()) {
+        var imageParallax = 'img/fondo.webp';
+      } else {
+        var imageParallax = 'https://www.fixdate.io/pe/modelo-invitacion/img/fondo.jpg';
+      }
+    }
+
+    setTimeout(() => {
+      $('.portada').parallax({
+        imageSrc: imageParallax
+      });
+      AOS.init();
+    }, 2000);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- Cuenta Regresiva -->
+<!-- <section class="cuenta-regresiva"> -->
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="box-aros d-flex justify-content-center align-items-center">
+      <div class="box-circulo text-center">
+        <span class="falta">{{ distance < 0 ? '' : 'Falta' }}</span>
+        @if (distance < 0) {
+          <p class="fin-cuenta">Casados!!!</p>
+        } @else {
+          <div id="reloj" class="reloj">
+            <div id="dias" class="reloj-col">
+              <span class="number">{{ days }}</span>
+              <span class="time">{{ days > 1 ? 'dias' : 'día' }}</span>
+            </div>
+            <div id="horas" class="reloj-col">
+              <span class="number">{{ hours }}</span>
+              <span class="time">hs</span>
+            </div>
+            <div id="minutos" class="reloj-col">
+              <span class="number">{{ minutes }}</span>
+              <span class="time">min</span>
+            </div>
+            <div id="segundos" class="reloj-col no-border">
+              <span class="number">{{ seconds }}</span>
+              <span class="time">seg</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        }
+        <div class="d-flex justify-content-center align-items-center">
+          <!-- Corazon -->
+          <div #heartPalpitation class="corazon-falta"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </section> -->
