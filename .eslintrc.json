@@ -1,0 +1,71 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*", "src/app/**/*.spec.ts"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "env": {
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/no-useless-constructor": ["error"],
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Component", "View", "Page", "Main"]
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "ibk",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "ibk",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "rules": {
+        "@angular-eslint/template/label-has-associated-control": ["off"]
+      }
+    },
+    {
+      "files": ["*.jsx"],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": false,
+            "parser": "flow"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "extends": ["plugin:@ngrx/recommended"]
+    }
+  ]
+}
