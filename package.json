@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --base-href /boda-luis-y-cristina/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
@@ -13,7 +14,7 @@
     "format": "prettier --write \"./src/**/*.{ts,json,html}\"",
     "lint-format": "npm run format &&  ng lint --fix",
     "format-pretty-quick": "pretty-quick --pattern \"src/**/*.*(ts|json|html|scss)\" --staged",
-    "deploy": "npm run build && gh-pages -d dist/boda-luis-y-cristina/"
+    "deploy": "npm run build-prod && gh-pages -d dist/boda-luis-y-cristina/browser/"
   },
   "private": true,
   "dependencies": {
