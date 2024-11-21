@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 declare var bodymovin: any;
 
@@ -9,8 +9,8 @@ declare var bodymovin: any;
   templateUrl: './gifts.component.html',
   styleUrl: './gifts.component.scss'
 })
-export class GiftsComponent implements OnInit {
-  @ViewChild('backgroundMusic') backgroundMusic!: ElementRef;
+export class GiftsComponent implements OnInit, AfterViewInit {
+  @ViewChild('backgroundMusic') backgroundMusic!: ElementRef<HTMLAudioElement>;
   isPlayMusic: boolean = false;
 
   constructor() {}
@@ -24,6 +24,12 @@ export class GiftsComponent implements OnInit {
       loop: true,
       path: 'img/reproductor.json'
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.playPauseMusic();
+    }, 1000);
   }
 
   playPauseMusic(): void {
