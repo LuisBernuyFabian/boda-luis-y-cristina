@@ -1,8 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 declare var bodymovin: any;
-declare var $: any;
-declare var google: any;
 
 @Component({
   selector: 'lyc-ceremony',
