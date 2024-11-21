@@ -1,8 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 declare var bodymovin: any;
-declare var YT: any;
-declare var $: any;
 
 @Component({
   selector: 'lyc-gifts',
@@ -11,15 +9,13 @@ declare var $: any;
   templateUrl: './gifts.component.html',
   styleUrl: './gifts.component.scss'
 })
-export class GiftsComponent implements OnInit, AfterViewInit {
-  player: any;
-  musicPlay: boolean = false;
+export class GiftsComponent implements OnInit {
+  @ViewChild('backgroundMusic') backgroundMusic!: ElementRef;
+  isPlayMusic: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     let svgContainerMusicAnimIcon = document.querySelector('.music-anim-icon');
     let animMusicAnimIcon = bodymovin.loadAnimation({
       wrapper: svgContainerMusicAnimIcon,
@@ -28,31 +24,18 @@ export class GiftsComponent implements OnInit, AfterViewInit {
       loop: true,
       path: 'img/reproductor.json'
     });
-
-    this.player = new YT.Player('playermusicafondo', {
-      // height: '10',
-      // width: '10',
-      // videoId: 'X0rJieOM2NY',
-      // playerVars: { autoplay: 1, controls: 0 },
-      events: {
-        onReady: (event: any) => {
-          this.onPlayerReady(event);
-        }
-      }
-    });
   }
 
   playPauseMusic(): void {
-    this.musicPlay = !this.musicPlay;
-    if (this.musicPlay) {
-      this.player.playVideo();
-    } else {
-      this.player.pauseVideo();
-    }
+    this.isPlayMusic = !this.isPlayMusic;
+    this.isPlayMusic ? this.playMusic() : this.pauseMusic();
   }
 
-  private onPlayerReady(event: any): void {
-    event.target.setVolume(80);
-    event.target.playVideo();
+  private playMusic(): void {
+    this.backgroundMusic.nativeElement.play();
+  }
+
+  private pauseMusic(): void {
+    this.backgroundMusic.nativeElement.pause();
   }
 }

@@ -158,16 +158,6 @@
     </div>
   </div>
 </section>
-<!-- <section class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-nombres-footer d-flex justify-content-end align-items-center">
-        <h4>Luis <span>&amp;</span> Cristina</h4>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <footer>
   <div class="container">
     <div class="row">
@@ -187,26 +177,6 @@
 
 <!-- Musica -->
 <div id="controlador-musica" (click)="playPauseMusic()">
-  <div id="play-pause-music" data-estado-music="play" class="music-anim-icon"></div>
-  <!-- // eslint-disable-next-line @angular-eslint/template/click-events-have-key-events
-  <div id="play-pause-music" class="music-anim-icon" (click)="playPauseMusic()"></div> -->
+  <div id="play-pause-music" class="music-anim-icon"></div>
 </div>
-<!-- <div id="playermusicafondo"></div> -->
-<iframe
-  id="playermusicafondo"
-  frameborder="0"
-  allowfullscreen=""
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  title="Ellie Goulding - Love Me Like You Do (Abbey Road Performance)"
-  width="10"
-  height="10"
-  src="https://www.youtube.com/embed/X0rJieOM2NY?enablejsapi=1&amp;start=3"
-></iframe>
-
-<!-- <iframe
-  id="playermusicafondo"
-  type="text/html"
-  src="https://www.youtube.com/embed/X0rJieOM2NY?enablejsapi=1&amp;start=3"
-  allow="autoplay"
-></iframe> -->
+<audio #backgroundMusic src="audio/LoveMeLikeYouDov2.mp3" controls autoplay hidden volume="0.8"></audio>
