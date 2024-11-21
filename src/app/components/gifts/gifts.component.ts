@@ -30,10 +30,10 @@ export class GiftsComponent implements OnInit, AfterViewInit {
     });
 
     this.player = new YT.Player('playermusicafondo', {
-      height: '10',
-      width: '10',
-      videoId: 'X0rJieOM2NY',
-      playerVars: { autoplay: 1, controls: 0 },
+      // height: '10',
+      // width: '10',
+      // videoId: 'X0rJieOM2NY',
+      // playerVars: { autoplay: 1, controls: 0 },
       events: {
         onReady: (event: any) => {
           this.onPlayerReady(event);
